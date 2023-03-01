@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split</title>
+</head>
+<!-- ADD CSS -->
+<link rel="stylesheet" href="CSS/style.css">
+<!-- FONT AWESOME -->
+<script src="https://kit.fontawesome.com/c0b0fa1dae.js" crossorigin="anonymous"></script>
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap" rel="stylesheet" >
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<!-- ANIMATION FOR SCROLL -->
+<link rel="stylesheet" href="CSS/aos.css">
+<!-- ADD JS -->
+<script src="JS/script.js" defer></script>
+<!-- PRELOAD -->
+<link rel="preload" as="image" href="./img/split-start.jpg" />
+
+
+<body>
+    <!-- chat pop-up -->
+    <section>
+        <button class="open-button" onclick="openForm()"><i class="fas fa-comments"></i></button>
+        <div class="chat-popup" id="myForm">
+            <form class="form-container">
+                <h1>Pošaljite poruku</h1>
+                <textarea placeholder="Napiši poruku.." name="msg" id="textbox"></textarea>
+
+                <button onclick="alertFja()" type="button" class="btn">Pošalji</button>
+                <button class="btn cancel" type="button" onclick="closeForm()">Zatvori</button>
+            </form>
+
+        </div>
+    </section>
+    <!-- loader -->
+    <section>
+        <div class="preloader">
+            <div class="loader-item">
+                <h6>Loading...</h6>
+                <img src="./media/ajax-loader.gif" alt="loader">
+            </div>
+
+        </div>
+    </section>
+    <header>
+        <div id="sidebar-on" class="sidebar">
+            <nav>
+                <button class="closebtn" onclick="closeNav()" type="button"><i class="fas fa-times"></i></button>
+                <a class="link" href="#"><i class="fas fa-home"></i>
+                    <span>Početna</span></a>
+                <a class="link" href="#gallery"><i class="fas fa-images"></i>
+                    <span>Galerija</span></a>
+                <a class="link" href="#info"><i class="fas fa-info"></i>
+                    <span>O Splitu</span></a>
+                <a class="link" href="#znamenitosti"><i class="fas fa-university"></i></i>
+                    <span>Znamenitosti</span></a>
+                <a class="link" href="#izleti"><i class="fas fa-map"></i></i></i>
+                    <span>Izleti</span></a>
+                <a class="link" href="#footer"><i class="far fa-address-card"></i>
+                    <span>Kontakt</span></a>
+            </nav>
+        </div>
+        <div id="sidebar-off">
+            <button class="openbtn" onclick="openNav()"><i class="fas fa-bars"></i></button>
+            <button id="switchbtn" onclick="switchMode()"><i class="fas fa-adjust"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section id="banner">
+            <img src="img/split-start.jpg" alt="Split">
+            <div>
+                <h1>Split</h1>
+            </div>
+        </section>
+        <section id="gallery">
+            <h2>Galerija</h2>
+            <div id="cont-img">
+                <div data-aos="zoom-in" class="img"><img src="./img/galerija/andrew-buchanan-RoSK1yun7hw-unsplash.jpg"
+                        alt="split"></div>
+                <div data-aos="zoom-in" class="img"><img src="./img/galerija/blue-shark-YZHRk36psTM-unsplash.jpg"
+                        alt="split"></div>
+                <div data-aos="zoom-in" class="img"><img src="./img/galerija/filipa-costa-lhoZtSNx09U-unsplash.jpg"
+                        alt="split"></div>
+                <div data-aos="zoom-in" class="img"><img src="./img/galerija/june-liu-rdV34VmaTvU-unsplash.jpg"
+                        alt="split"></div>
+                <div data-aos="zoom-in" class="img"><img src="./img/galerija/mark-adriane-bTes2faXRi8-unsplash.jpg"
+                        alt="split"></div>
+                <div data-aos="zoom-in" class="img"><img src="./img/galerija/sander-lenaerts-6gScjC67nzg-unsplash.jpg"
+                        alt="split"></div>
+                <div data-aos="zoom-in" class="img"><img src="./img/galerija/spencer-davis-2ItO9srSw4g-unsplash.jpg"
+                        alt="split"></div>
+                <div data-aos="zoom-in" class="img"><img src="./img/galerija/spencer-davis-HjHnI35B4YY-unsplash.jpg"
+                        alt="split">
+                </div>
+            </div>
+        </section>
+        <section id="info">
+            <h2>O Splitu</h2>
+            <section id="infosplit">
+                <div data-aos="fade-right" class="text">
+                    Split je po veličini drugi grad u Republici Hrvatskoj i najveći hrvatski grad na istočnoj obali
+                    Jadranskog mora.
+                    Obrubljen planinama, Mosorom na sjeveroistoku i Kozjakom na sjeverozapadu, smjestio se između rijeka
+                    Žrnovnice na istoku
+                    i Jadra na sjeveru, uranjajući na zapad u more svojim poluotočnim dijelom, na kojem se ističe
+                    marjanska šuma te
+                    prelazeći na otok Čiovo. Čak 15 kilometara šetnica uz more čini idealan spoj sa kamenim ulicama
+                    staroga grada šireći
+                    njime duh Sredozemlja.Prema popisu stanovništva iz 2011. godine, ima 178.192 stanovnika.
+                </div>
+                <div>
+                    <img data-aos="fade-left" class="imginfo" src="./img/o splitu/split.jpg" alt="split">
+                </div>
+
+            </section>
+            <section id="hajdukinfo">
+                <img data-aos="fade-right" class="imginfo" src="./img/o splitu/hajduk.jpg" alt="hajduk">
+                <div data-aos="fade-left" class="text" id="hajduk">
+                    Hrvatski nogometni klub Hajduk Split (HNK Hajduk Split) je hrvatski nogometni klub iz Splita.
+                    Najveće je športsko
+                    društvo u Splitu i jedno od većih u Hrvatskoj. Domaće utakmice igra na Gradskom stadionu u
+                    Poljudu. Kroz bogatu povijest
+                    klub je osvojio 18 prvenstava u pet država, 15 nacionalnih kupova i 5 superkupova, a najveći
+                    europski uspjesi su mu tri
+                    četvrtzavršnice Lige prvaka te po jedna poluzavršnica Kupa UEFA i Kupa pobjednika kupova.
+                    Hrvatski nogometni klub Hajduk
+                    Split (HNK Hajduk Split) je hrvatski nogometni klub iz Splita. Najveće je športsko društvo u
+                    Splitu i jedno od većih u
+                    Hrvatskoj. Domaće utakmice igra na Gradskom stadionu u Poljudu.
+                    <figure id="audiohajduk">
+                        <figcaption>Tutti Frutti-Dalmacijo</figcaption>
+                        <audio controls src="./media/Tutti-Frutti-Dalmacijo.mp3">
+                            Greska!
+                            <code>audio</code> element.
+                        </audio>
+                    </figure>
+                </div>
+            </section>
+        </section>
+        <section id="znamenitosti">
+            <h2>Znamenitosti</h2>
+            <section id="palaca">
+                <div data-aos="fade-right" class="text">
+                    Dioklecijanova palača je jedan od najbolje sačuvanih spomenika rimskoga graditeljstva na
+                    svijetu. Povijesna cjelina
+                    Splita s Dioklecijanovom palačom uvrštena je 1979. na UNESCO-ov popis svjetske kulturne baštine.
+                    Careva je palača bila sagrađena kao spoj luksuzne vile - ljetnikovca i rimskog vojničkog logora
+                    (castruma),
+                    podijeljenoga na četiri dijela dvjema glavnim ulicama. Južni dio Palače bio je u toj shemi
+                    predviđen za cara, njegov
+                    stan i odgovarajući državni i vjerski ceremonijal, dok je sjeverni bio za carsku stražu -
+                    vojsku, poslugu, za spremišta
+                    i slično. Palača je pravokutna građevina sa četiri velike kule na kutovima, vratima na svakoj od
+                    četiri strane i sa po
+                    četiri manje kule na zidovima.
+                </div>
+                <img data-aos="fade-left" class="imginfo" src="./img/znamenitosti/dioklecijanova.jpg"
+                    alt="dioklecijanova-palaca">
+            </section>
+            <section id="katedrala">
+                <img data-aos="fade-right" class="imginfo" src="./img/znamenitosti/katedrala.jfif"
+                    alt="katedrala sv.duje">
+                <div data-aos="fade-left" class="text">
+                    Među europskim katedralama splitska ima za sjedište najstariju građevinu - mauzolej rimskog cara
+                    Dioklecijana. U njoj,
+                    na koncu drugog milenija, povijest izmiruje pogansku antičku, kršćansku srednjovjekovnu i
+                    modernu baštinu. Mauzolej
+                    cara-progonitelja kršćana postaje sredinom 7. stoljeća katedralom u kojoj su na počasnim
+                    mjestima postavljeni oltari s
+                    relikvijama Svetog Dujma i Svetog Staša, mučenika pogubljenih u obližnjem Solinu.
+                </div>
+            </section>
+            <section id="vestibul">
+                <div data-aos="fade-right" class="text">
+                    Izvana četvrtastog, iznutra kružnog tlocrta, Vestibul, to staro carsko predvorje i danas djeluje
+                    monumentalno. A kako li
+                    je tek fasciniralo u svojoj prvotnoj potpunosti: polukružne niše s kipovima; velika kupola sa
+                    svjetlucavim mozaikom u
+                    bojama, o čemu svjedoči Marko Marulić svojim rukopisom iz 16. stoljeća; bjelina rotondastog
+                    zida.
+                </div>
+                <img data-aos="fade-left" class="imginfo" src="./img/znamenitosti/vestibul.jpg" alt="vestibul">
+            </section>
+        </section>
+        <section id="izletiinfo">
+            <h2>Izleti</h2>
+            <div id="izleti">
+                <div data-aos="flip-up" class="izlet">
+                    <figure><a href="https://splitadventure.com/hr/bicikliranje-split/"><img class="slikeizlet"
+                                src="./img/izleti/bike.jpg" alt="biciklo"></a></figure>
+                    <div>Bicikliranje</div>
+                </div>
+                <div data-aos="flip-up" class="izlet">
+                    <figure>
+                        <a href="http://www.adriaticatransfer.com/izleti-brodom-split.asp"><img class="slikeizlet"
+                                src="./img/izleti/boat.jpg" alt="brod"></a>
+                    </figure>
+                    <div>Izleti brodom</div>
+                </div>
+                <div data-aos="flip-up" class="izlet">
+                    <figure>
+                        <a href="https://happytovisit.com/hr/Split/Gradska-razgledavanja/tours-g2-n6"><img
+                                class="slikeizlet" src="./img/izleti/city.jpg" alt="grad"></a>
+                    </figure>
+                    <div>Izleti u gradove</div>
+                </div>
+                <div data-aos="flip-up" class="izlet">
+                    <figure>
+                        <a href="https://happytovisit.com/hr/Split/Nacionalni-parkovi/tours-g2-n55"><img
+                                class="slikeizlet" src="./img/izleti/park.jpg" alt="nacionalnipark"></a>
+                    </figure>
+                    <div>Izleti u nacionalne parkove</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <section id="footerflex">
+            <section id="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.5654553459467!2d16.466539794460022!3d43.51139990774537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13355e3cbb175f2d%3A0x505534f00924e86!2sFakultet%20elektrotehnike%2C%20strojarstva%20i%20brodogradnje%20u%20Splitu!5e0!3m2!1shr!2shr!4v1627743262108!5m2!1shr!2shr"
+                    width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </section>
+            <section id="about">
+                <ul type="none">
+                    <li>
+                        <address>
+                            <a href="mailto:kprovi00@fesb.hr"><i class="far fa-envelope"></i>kprovi00@fesb.hr</a>
+                        </address>
+                    </li>
+                    <li>
+                        <address>
+                            <a href="tel:+1234567898"><i class="fas fa-phone-alt"></i>+385 123 4568</a>
+                        </address>
+                    </li>
+                    <li><i class="fas fa-map-marked-alt"></i>Ulica Ruđera Boškovića</li>
+                </ul>
+            </section>
+            <section id="follow">
+                <ul type="none">
+                    <li>
+                        <a id="fb" href="http://facebook.com" target="_blank">
+                            <i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a id="inst" href="http://instagram.com" target="_blank">
+                            <i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a id="twit" href="http://twitter.com" target="_blank">
+                            <i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a id="linkedin" href="https://www.linkedin.com/" target="_blank">
+                            <i class="fab fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section id="prava">
+            <p>&copy;<em>2021, Sva prava pridržana </em></p>
+            <p> Korina Prović</p>
+        </section>
+
+    </footer>
+
+    
+    <!-- ANIMACIJE ZA SCROLL -->
+    <script src="JS/aos.js"></script>
+
+</body>
+
+</html>

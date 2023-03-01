@@ -1,0 +1,606 @@
+/* GENERAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #e9dfdf;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+.dark-mode {
+  background-color: #1f1c1c;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  font-size: 57px;
+  padding: 5px;
+  margin: 11px;
+  font-family: "WindSong", cursive;
+}
+h2::after {
+  content: "";
+  background-color: black;
+  width: 50%;
+  height: 1px;
+  display: block;
+  margin: auto;
+  margin-top: 3px;
+}
+
+/* CHAT POPUP */
+.open-button {
+  background-color: transparent;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 23px;
+  right: 13px;
+  z-index: 3;
+  font-size: 35px;
+}
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 9;
+}
+.form-container {
+  max-width: 275px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 15px;
+  color: black;
+}
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.form-container .btn {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 49%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  border-radius: 25px;
+}
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+/* PAGE LOADER */
+.loader-item {
+  font-size: 150px;
+  background: transparent;
+  color: #f1f1f1;
+  z-index: 1000;
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.loader-item img {
+  width: 200px;
+}
+.preloader {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f1c1c;
+}
+
+.preloader.complete {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ########HEADER####### */
+header {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+}
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(17, 17, 17);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  opacity: 0.9;
+}
+.sidebar a {
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 29px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+.openbtn {
+  font-size: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+.closebtn {
+  cursor: pointer;
+}
+#sidebar-off {
+  display: flex;
+  justify-content: space-between;
+}
+#switchbtn {
+  font-size: 30px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+/* ########### MAIN ########## */
+
+/*---BANNER--- */
+#banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+#banner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+}
+#banner img {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  animation: zoomInOut 20s ease infinite;
+}
+#banner > div {
+  position: absolute;
+}
+#banner h1 {
+  font-family: "WindSong", cursive;
+  font-size: 250px;
+  color: #e9dfdf;
+}
+@keyframes zoomInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+/* ---GALERIJA--- */
+#cont-img {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-template-rows: repeat(2, 300px);
+  justify-content: center;
+  gap: 4px 4px;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img {
+  background-color: rgba(207, 206, 206, 0.185);
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+}
+
+/* ---O SPLITU--- */
+#info {
+  display: flex;
+  flex-direction: column;
+}
+#infosplit,
+#hajdukinfo,
+#katedrala,
+#vestibul,
+#palaca {
+  display: grid;
+  grid-template-columns: repeat(2, 600px);
+  grid-template-rows: repeat(1, 400px);
+  justify-content: center;
+  gap: 4px 4px;
+  padding: 23px;
+}
+.imginfo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-family: "Poppins", sans-serif;
+}
+#hajduk {
+  display: flex;
+  flex-direction: column;
+}
+#audiohajduk {
+  padding-top: 15px;
+  font-weight: bold;
+}
+/* ---IZLETI--- */
+#izleti {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px;
+}
+.izlet {
+  margin: 8px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+}
+.slikeizlet {
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+  padding-top: 10px;
+}
+.slikeizlet:hover {
+  transform: scale(1.2);
+}
+#izleti figure {
+  overflow: hidden;
+}
+
+/* ######## FOOTER ####### */
+#footerflex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+}
+#footer {
+  background-image: url(../img/split-footer.png);
+  background-attachment: fixed;
+  background-position: top;
+}
+
+#follow a {
+  padding: 9px 15px;
+  border-style: solid;
+  font-size: 31px;
+  border-radius: 52%;
+  margin: 8px;
+}
+#follow ul {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#about i,
+a {
+  padding: 8px;
+  text-decoration: none;
+  color: white;
+}
+#about a:hover {
+  text-decoration: underline;
+}
+#fb:hover {
+  border: none;
+  background: #3b5998;
+  color: white;
+}
+#inst:hover {
+  background: #125688;
+  color: white;
+  border: none;
+}
+#twit:hover {
+  background: #55acee;
+  color: white;
+  border: none;
+}
+#linkedin:hover {
+  background: #007bb5;
+  color: white;
+  border: none;
+}
+#prava {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  font-size: 15px;
+  border-top: solid;
+  border-width: thin;
+  width: 85%;
+  margin: auto;
+}
+
+/* ZA MOBITELE*/
+@media only screen and (max-width: 767px) {
+  /* OPCENITO */
+  h2 {
+    font-size: 35px;
+    margin: 0;
+  }
+  .open-button {
+    display: none;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  /* LOADER */
+  .loader-item {
+    font-size: 100px;
+  }
+  .loader-item img {
+    width: 100px;
+  }
+  /* HEADER */
+  .openbtn {
+    font-size: 23px;
+  }
+  #switchbtn {
+    font-size: 23px;
+  }
+  .sidebar a {
+    font-size: 22px;
+  }
+  /* BANNER */
+  #banner h1 {
+    font-size: 65px;
+  }
+  /* GALERIJA */
+  #cont-img {
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(4, 150px);
+    gap: 2px 2px;
+  }
+  /* O SPLITU */
+  #infosplit,
+  #hajdukinfo,
+  #katedrala,
+  #vestibul,
+  #palaca {
+    grid-template-columns: repeat(1, 300px);
+    grid-template-rows: repeat(2, 250px);
+    height: fit-content;
+  }
+  .text {
+    font-size: 11px;
+  }
+  #audiohajduk {
+    display: none;
+  }
+  /* IZLETI */
+  #izleti {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  /* FOOTER */
+  #footerflex {
+    flex-wrap: wrap;
+  }
+  #about {
+    font-size: 15px;
+  }
+  #follow a {
+    font-size: 20px;
+  }
+  #prava {
+    font-size: 9px;
+    justify-content: space-evenly;
+    width: 70%;
+  }
+}
+
+/* ZA TABLETE */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* OPCENITO */
+  h2 {
+    font-size: 40px;
+    margin: 0;
+  }
+  .open-button {
+    font-size: 30px;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  /* HEADER */
+  .openbtn {
+    font-size: 30px;
+  }
+  #switchbtn {
+    font-size: 30px;
+  }
+  .sidebar a {
+    font-size: 30px;
+  }
+  /* BANNER */
+  #banner h1 {
+    font-size: 105px;
+  }
+  /* GALERIJA */
+  #cont-img {
+    grid-template-columns: repeat(4, 185px);
+    grid-template-rows: repeat(2, 185px);
+    gap: 2px 2px;
+  }
+  /* O SPLITU */
+  #infosplit,
+  #hajdukinfo,
+  #katedrala,
+  #vestibul,
+  #palaca {
+    grid-template-columns: repeat(2, 370px);
+    grid-template-rows: repeat(1, 390px);
+    height: fit-content;
+  }
+  .text {
+    font-size: 14px;
+  }
+  #audiohajduk {
+    display: none;
+  }
+  /* IZLETI */
+  #izleti {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  /* FOOTER */
+  #footerflex {
+    flex-wrap: nowrap;
+  }
+  #about {
+    font-size: 13px;
+    text-align: center;
+  }
+  #follow a {
+    font-size: 18px;
+  }
+  #prava {
+    font-size: 11px;
+    justify-content: space-evenly;
+    width: 80%;
+  }
+}
+/* IPAD PRO */
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  /* OPCENITO */
+  h2 {
+    font-size: 65px;
+    margin: 0;
+  }
+  .open-button {
+    display: none;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  /* HEADER */
+  .openbtn {
+    font-size: 40px;
+  }
+  #switchbtn {
+    font-size: 40px;
+  }
+  .sidebar a {
+    font-size: 45px;
+  }
+  /* BANNER */
+  #banner h1 {
+    font-size: 145px;
+  }
+  /* GALERIJA */
+  #cont-img {
+    grid-template-columns: repeat(4, 230px);
+    grid-template-rows: repeat(2, 230px);
+    gap: 2px 2px;
+  }
+  /* O SPLITU */
+  #infosplit,
+  #hajdukinfo,
+  #katedrala,
+  #vestibul,
+  #palaca {
+    grid-template-columns: repeat(2, 460px);
+    grid-template-rows: repeat(1, 410px);
+    height: fit-content;
+  }
+  .text {
+    font-size: 17px;
+  }
+  #audiohajduk {
+    display: none;
+  }
+  /* IZLETI */
+  #izleti {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  /* FOOTER */
+  #footerflex {
+    flex-wrap: wrap;
+  }
+  #about {
+    font-size: 15px;
+  }
+  #follow a {
+    font-size: 20px;
+  }
+  #prava {
+    font-size: 9px;
+    justify-content: space-evenly;
+    width: 70%;
+  }
+}
